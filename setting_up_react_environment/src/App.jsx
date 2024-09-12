@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Greeting from './Greeting'
+import { Greeting, Food } from './Greeting'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Greeting />
+      <Food food="apple pie" />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
