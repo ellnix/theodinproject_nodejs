@@ -1,6 +1,6 @@
 import Sidebar from './Sidebar'
 import MainContent from './MainContent'
-import LinksRibbon from './Links'
+import LinksRibbon from './LinksRibbon'
 
 export default function CV() {
   return (
