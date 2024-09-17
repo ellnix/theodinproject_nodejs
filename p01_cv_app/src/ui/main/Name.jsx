@@ -1,7 +1,9 @@
 export default function Name() {
   return (
-    <h1>
-      Jane Doe
-    </h1>
+    <div className="name-wrapper">
+      <h1>
+        Jane Doe
+      </h1>
+    </div>
   )
 }

@@ -1,0 +1,43 @@
+:root {
+  --cv-bg: #FFF8F0;
+  --sidebar-bg: #E85F5C;
+  --ribbon-bg: #9E2B25;
+  --name-bg: #759AAB;
+}
+
+.cv-wrapper {
+  background: var(--cv-bg);
+  display: flex;
+  flex-direction: column;
+  margin: 10rem auto;
+  width: 800px;
+  position: absolute;
+}
+
+.name-wrapper {
+  background: var(--name-bg);
+}
+
+.name-wrapper > h1 {
+  display: block;
+  margin: 50px 10px 30px;
+  margin-left: 250px;
+}
+
+.cv {
+  display: flex;
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  position: relative;
+  top: -110px;
+}
+
+.ribbon {
+  background: var(--ribbon-bg);
+  width: 50px;
+}

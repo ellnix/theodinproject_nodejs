@@ -1,6 +1,6 @@
 export default function LinksRibbon() {
   return (
-    <aside>
+    <aside className="ribbon">
       <section>
         <h3>Code</h3>
         <ul>
