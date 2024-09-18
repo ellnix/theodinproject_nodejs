@@ -1,7 +1,7 @@
 export default function Location() {
   return (
     <section>
-      <h2>Location</h2>
+      <h3>Location</h3>
       <p>
         123 Somewhere<br />
         Some Town, Some Place 123123<br />

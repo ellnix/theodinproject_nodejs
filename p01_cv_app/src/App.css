@@ -2,26 +2,35 @@
   --cv-bg: #FFF8F0;
   --sidebar-bg: #E85F5C;
   --ribbon-bg: #9E2B25;
-  --name-bg: #759AAB;
+  --name-bg: #313638;
+  --name-fg: #FFF8F0;
+
+  --font-mono: "Chivo Mono", "IBM Plex Mono", "SF Mono", "Menlo", monospaced;
+  --font-fancy: "Chivo", sans-serif;
 }
 
 .cv-wrapper {
+  border-radius: 4px;
   background: var(--cv-bg);
+  border: 2px solid var(--name-bg);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 10rem auto;
-  width: 800px;
-  position: absolute;
+  width: 1000px;
 }
 
 .name-wrapper {
   background: var(--name-bg);
+  color: var(--name-fg);
+  font-family: var(--font-fancy);
 }
 
 .name-wrapper > h1 {
   display: block;
-  margin: 50px 10px 30px;
-  margin-left: 250px;
+  margin: 75px 40px 35px;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 .cv {
@@ -29,15 +38,54 @@
 }
 
 .sidebar {
-  background: var(--sidebar-bg);
+  border-left: 2px solid var(--sidebar-bg);
   padding: 10px;
-  margin: 10px;
   width: 250px;
-  position: relative;
-  top: -110px;
+  margin: 20px;
+  margin-right: 5px;
 }
 
 .ribbon {
-  background: var(--ribbon-bg);
-  width: 50px;
+  margin: 20px;
+  margin-left: 5px;
+  border-left: 2px solid var(--ribbon-bg);
+  width: 150px;
+}
+
+section h3 {
+  border-bottom: 1px black solid;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-mono);
+}
+
+main > section {
+  margin: 35px;
+}
+
+.sidebar section, .ribbon section {
+  margin: 15px;
+}
+
+.job > h4 {
+  font-family: var(--font-fancy);
+  font-size: 1.5rem;
+  margin: 25px 0 5px;
+}
+
+.job > .job-subtitle {
+  opacity: 0.8;
+  margin: 5px 0 10px;
+  font-family: var(--font-mono);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul > li {
+  margin: 0;
 }

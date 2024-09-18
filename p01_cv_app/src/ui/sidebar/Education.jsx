@@ -1,7 +1,7 @@
 export default function Education() {
   return (
     <section>
-      <h2>Education</h2>
+      <h3>Education</h3>
       <ul>
         <li>Degree 1</li>
         <li>Degree 2</li>

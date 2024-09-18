@@ -8,8 +8,8 @@ export default function CV() {
     <div className="cv-wrapper">
       <Name />
       <div className="cv">
-        <Sidebar />
         <MainContent />
+        <Sidebar />
         <LinksRibbon />
       </div>
     </div>

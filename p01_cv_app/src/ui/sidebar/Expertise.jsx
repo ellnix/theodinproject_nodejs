@@ -1,7 +1,7 @@
 export default function Expertise() {
   return (
     <section>
-      <h2>Expertise</h2>
+      <h3>Expertise</h3>
       <ul>
         <li>Skill 1</li>
         <li>Skill 2</li>
