@@ -1,11 +1,27 @@
+import Skill from './expertise/Skill'
+const skills = [
+  {
+    name: "Lying",
+    level: 4,
+  },
+  {
+    name: "Leadership",
+    level: 1,
+  },
+  {
+    name: "Management",
+    level: 3,
+  }
+]
+
 export default function Expertise() {
   return (
     <section>
       <h3>Expertise</h3>
       <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
+        {skills.map(skill => 
+          <Skill {...skill} />
+        )}
       </ul>
     </section>
   )
