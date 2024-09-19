@@ -1,9 +1,14 @@
-export default function Name() {
+import EditButton from '../EditButton'
+
+export default function Name({ changeName }) {
   return (
     <div className="name-wrapper">
-      <h1>
-        Jane Doe
-      </h1>
+      <div className="name">
+        <EditButton onClick={changeName} />
+        <h1>
+          Jane Doe
+        </h1>
+      </div>
     </div>
   )
 }
