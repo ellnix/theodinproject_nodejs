@@ -12,6 +12,17 @@ const codeLinks = [
   }
 ]
 
+const socialLinks = [
+  {
+    text: 'LinkedIn',
+    href: 'https://linkedin.com/',
+  },
+  {
+    text: 'X',
+    href: 'https://x.com/'
+  },
+]
+
 export default function LinksRibbon() {
   return (
     <aside className="ribbon">
@@ -26,8 +37,9 @@ export default function LinksRibbon() {
       <section>
         <h3>Social</h3>
         <ul>
-          <li>LinkedIn</li>
-          <li>Twitter</li>
+          {socialLinks.map(sl =>
+            <li><SocialLink {...sl} /></li>
+          )}
         </ul>
       </section>
     </aside>

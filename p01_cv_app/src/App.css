@@ -112,7 +112,7 @@ section.school {
   margin: 5px 0;
 }
 
-.code-link {
+.code-link, .social-link {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -121,7 +121,7 @@ section.school {
   margin: 5px 0;
 }
 
-.code-link > p {
+.code-link > p, .social-link > p {
   margin: 5px;
 }
 
