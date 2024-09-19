@@ -1,12 +1,19 @@
+import School from './education/School'
+
+const education = [
+  {
+    title: 'MIT',
+    subtitle: '2022-2024',
+  }
+]
+
 export default function Education() {
   return (
-    <section>
+    <section className="education">
       <h3>Education</h3>
-      <ul>
-        <li>Degree 1</li>
-        <li>Degree 2</li>
-        <li>Degree 3</li>
-      </ul>
+      {education.map(school =>
+        <School {...school} />
+      )}
     </section>
   )
 }

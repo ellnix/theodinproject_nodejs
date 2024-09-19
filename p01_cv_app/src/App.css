@@ -103,3 +103,11 @@ ul {
   text-transform: uppercase;
   font-size: 0.8rem;
 }
+
+section.school {
+  margin: 10px 0;
+}
+
+.school-title, .school-subtitle {
+  margin: 5px 0;
+}
