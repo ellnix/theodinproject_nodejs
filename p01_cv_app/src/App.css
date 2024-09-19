@@ -111,3 +111,17 @@ section.school {
 .school-title, .school-subtitle {
   margin: 5px 0;
 }
+
+.code-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: var(--font-mono);
+  margin: 5px 0;
+}
+
+.code-link > p {
+  margin: 5px;
+}
+
