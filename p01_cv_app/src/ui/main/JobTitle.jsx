@@ -1,8 +1,11 @@
-export default function JobTitle() {
+import EditButton from '../EditButton'
+
+export default function JobTitle({ title }) {
   return (
     <section>
+      <EditButton />
       <h2>
-        Lumberjack
+        {title}
       </h2>
     </section>
   )

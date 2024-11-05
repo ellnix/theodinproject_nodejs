@@ -135,6 +135,7 @@ section.school {
 
 .name-wrapper .edit-button {
   color: white;
+  border-bottom: 2px solid white;
 }
 
 .name-wrapper .edit-button > img {
@@ -150,7 +151,7 @@ section.school {
   font-weight: 500;
   font-family: var(--font-mono);
   padding: 4px 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
   cursor: pointer;
   font-size: 0.75rem;
 }
