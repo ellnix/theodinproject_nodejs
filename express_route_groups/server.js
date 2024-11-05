@@ -5,6 +5,15 @@ import indexRouter from './routes/indexRouter.js'
 
 const app = express()
 
+const timer_mw = (_req, _res, next) => {
+  const start = Date.now()
+
+  next()
+
+  console.log(`Processing request took ${Date.now() - start}ms`)
+}
+
+app.use(timer_mw)
 app.use('/authors', authorRouter)
 app.use('/books', booksRouter)
 app.use('/', indexRouter)
