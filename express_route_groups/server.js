@@ -1,23 +1,29 @@
-import express from 'express'
-import authorRouter from './routes/authorRouter.js'
-import booksRouter from './routes/bookRouter.js'
-import indexRouter from './routes/indexRouter.js'
+import express from "express";
+import authorRouter from "./routes/authorRouter.js";
+import booksRouter from "./routes/bookRouter.js";
+import indexRouter from "./routes/indexRouter.js";
 
-const app = express()
+const app = express();
 
 const timer_mw = (_req, _res, next) => {
-  const start = Date.now()
+  const start = Date.now();
 
-  next()
+  next();
 
-  console.log(`Processing request took ${Date.now() - start}ms`)
-}
+  console.log(`Processing request took ${Date.now() - start}ms`);
+};
 
-app.use(timer_mw)
-app.use('/authors', authorRouter)
-app.use('/books', booksRouter)
-app.use('/', indexRouter)
+app.use(timer_mw);
+app.use("/authors", authorRouter);
+app.use("/books", booksRouter);
+app.use("/", indexRouter);
 
-const port = process.env.PORT || 3000
+app.use((err, req, res, next) => {
+  console.log(err);
 
-app.listen(port, () => console.log("Express listening on port " + port))
+  res.status(err.statusCode || 500).send(err.message);
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log("Express listening on port " + port));
