@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>About Us</title>
+  </head>
+  <body>
+    <%- include('navbar', { links }) %>
+    <section>
+      <header>
+        <h1>Contact us</h1>
+      </header>
+      Phone <a href="tel:<%= phone %>"><%= phone %></a>
+      Email <a href="mailto:<%= email %>"><%= email %></a>
+    </section>
+  </body>
+</html>
