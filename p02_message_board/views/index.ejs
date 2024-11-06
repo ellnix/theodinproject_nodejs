@@ -5,5 +5,10 @@
   <body>
     <h1>Welcome to the message board</h1>
     <a href="/new">Leave a message</a>
+    <ul>
+      <% messages.forEach(message => { %>
+        <%- include('messages/message', { message }) %>
+      <% }) %>
+    </ul>
   </body>
 </html>
