@@ -2,7 +2,7 @@ import 'dotenv/config';
 
 import express from "express";
 import path from "node:path";
-import { getAllUsernames, insertUsername } from './db/queries';
+import { getAllUsernames, insertUsername, search } from './db/queries';
 
 const app = express();
 
@@ -25,6 +25,14 @@ app.post("/", (req, res) => {
   insertUsername(req.body.name);
   res.redirect("/");
 });
+
+app.get("/search", async (req, res) => {
+  const { q } = req.query
+
+  console.log("Search results:")
+  console.log(await search(q))
+  res.redirect("/")
+})
 
 const port = process.env.PORT || 3000;
 
