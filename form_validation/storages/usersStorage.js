@@ -19,12 +19,20 @@ class UsersStorage {
   }
 
   updateUser(id, { first_name, last_name, email, age, bio }) {
-    this.storage[id] = { id, first_name, last_name, email, age, bio }
+    this.storage[id] = { id, first_name, last_name, email, age, bio };
   }
 
   deleteUser(id) {
-    delete this.storage[id]
+    delete this.storage[id];
+  }
+
+  search({ name, email }) {
+    return this.getUsers().filter(
+      (user) =>
+        `${user.first_name} ${user.last_name}`.includes(name) &&
+        user.email.includes(email),
+    );
   }
 }
 
-export default new UsersStorage()
+export default new UsersStorage();

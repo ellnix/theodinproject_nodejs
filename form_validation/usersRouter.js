@@ -9,5 +9,6 @@ usersRouter.post('/', usersController.create)
 usersRouter.get('/:id/edit', usersController.edit)
 usersRouter.post('/:id', usersController.update)
 usersRouter.post('/:id/delete', usersController.delete)
+usersRouter.get('/search', usersController.search)
 
 export default usersRouter

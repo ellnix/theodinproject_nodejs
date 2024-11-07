@@ -3,10 +3,30 @@
     <title>Users</title>
   </head>
   <body>
-    <h1>All users</h1>
-    <a href="/create">Create a new user</a>
-    <% users.forEach(user => { %>
-      <%- include('user', { user }) %>
-    <% }) %>
+    <h1>Users</h1>
+    <section>
+
+      <header>
+        <h2>Search</h2>
+      </header>
+      <form method="GET" action="/search">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="<%= locals.name_query %>">
+
+        <label for="email">Email</label>
+        <input type="text" name="email" value="<%= locals.email_query %>">
+
+        <input type="submit" name="" value="Search">
+      </form>
+    </section>
+    <section>
+      <header>
+        <h2>All users</h2>
+      </header>
+      <a href="/create">Create a new user</a>
+      <% users.forEach(user => { %>
+        <%- include('user', { user }) %>
+      <% }) %>
+    </section>
   </body>
 </html>

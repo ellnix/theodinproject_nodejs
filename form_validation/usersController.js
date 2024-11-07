@@ -90,4 +90,11 @@ export default {
     usersStorage.deleteUser(id);
     res.redirect("/");
   },
+  search: (req, res) => {
+    res.render("users/index", {
+      name_query: req.query.name,
+      email_query: req.query.email,
+      users: usersStorage.search(req.query)
+    });
+  },
 };
