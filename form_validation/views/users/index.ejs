@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>All users</h1>
+    <a href="/create">Create a new user</a>
+    <% users.forEach(user => { %>
+      <%- include('user', { user }) %>
+    <% }) %>
+  </body>
+</html>
