@@ -19,7 +19,7 @@ class UsersStorage {
   }
 
   updateUser(id, { first_name, last_name }) {
-    this.storage[id] = { first_name, last_name }
+    this.storage[id] = { id, first_name, last_name }
   }
 
   deleteUser(id) {

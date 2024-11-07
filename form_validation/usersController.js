@@ -37,4 +37,32 @@ export default {
       res.redirect("/");
     },
   ],
+  edit: (req, res) => {
+    const { id } = req.params;
+    const user = usersStorage.getUser(Number(id));
+    res.render("users/edit", { user });
+  },
+  update: [
+    userValidation,
+    (req, res) => {
+      const { id } = req.params;
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        const user = usersStorage.getUser(Number(id));
+        return res
+          .status(400)
+          .render("users/edit", { user, errors: errors.array() });
+      }
+
+      const { first_name, last_name } = req.body;
+      usersStorage.updateUser(Number(id), { first_name, last_name });
+      res.redirect("/");
+    },
+  ],
+  delete: (req, res) => {
+    const { id } = req.params;
+    usersStorage.deleteUser(id);
+    res.redirect("/");
+  },
 };
