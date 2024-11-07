@@ -1,0 +1,21 @@
+{
+  "name": "express_with_db",
+  "module": "app.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "run": "bun run app.js",
+    "dev": "bun run --watch app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "pg": "^8.13.1"
+  }
+}
