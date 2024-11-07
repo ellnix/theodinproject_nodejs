@@ -1,0 +1,20 @@
+<form method="<%= method %>" action="<%= action %>">
+  <%- include("../partials/errors") %>
+
+  <label for="first_name">First name:</label>
+  <input type="text" name="first_name" value="<%= user.first_name %>">
+
+  <label for="last_name">Last name:</label>
+  <input type="text" name="last_name" value="<%= user.last_name %>">
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" value="<%= user.email %>">
+
+  <label for="age">Age:</label>
+  <input type="number" name="age" value="<%= user.age %>">
+
+  <label for="bio">Bio</label>
+  <textarea rows="10" cols="20" name="bio" value="<%= user.bio %>"></textarea>
+
+  <input type="submit" value="<%= submit %>">
+</form>

@@ -14,6 +14,23 @@ const userValidation = [
     .withMessage("Last name must be alphanumeric")
     .isLength({ min: 1, max: 10 })
     .withMessage("Last name must be between 1 and 10 letters"),
+  body("email")
+    .trim()
+    .optional(false)
+    .isEmail()
+    .withMessage("Email field must be a valid email"),
+  body("age")
+    .optional({ values: "falsy" })
+    .isNumeric()
+    .toInt()
+    .custom((age) => age >= 18)
+    .withMessage("You must be 18 or older")
+    .custom((age) => age <= 120)
+    .withMessage("You must be 120 or younger"),
+  body("bio")
+    .optional()
+    .isLength({ max: 200 })
+    .withMessage("Bio cannot be longer than 200 chars"),
 ];
 
 export default {
@@ -21,7 +38,7 @@ export default {
     res.render("users/index", { users: usersStorage.getUsers() });
   },
   new: (_req, res) => {
-    res.render("users/new");
+    res.render("users/new", { user: {} });
   },
   create: [
     userValidation,
@@ -29,11 +46,13 @@ export default {
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
-        return res.status(400).render("users/new", { errors: errors.array() });
+        return res
+          .status(400)
+          .render("users/new", { user: req.body, errors: errors.array() });
       }
 
-      const { first_name, last_name } = req.body;
-      usersStorage.addUser({ first_name, last_name });
+      const { first_name, last_name, email, age, bio } = req.body;
+      usersStorage.addUser({ first_name, last_name, email, age, bio });
       res.redirect("/");
     },
   ],
@@ -55,8 +74,14 @@ export default {
           .render("users/edit", { user, errors: errors.array() });
       }
 
-      const { first_name, last_name } = req.body;
-      usersStorage.updateUser(Number(id), { first_name, last_name });
+      const { first_name, last_name, email, age, bio } = req.body;
+      usersStorage.updateUser(Number(id), {
+        first_name,
+        last_name,
+        email,
+        age,
+        bio,
+      });
       res.redirect("/");
     },
   ],

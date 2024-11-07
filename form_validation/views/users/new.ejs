@@ -1,9 +1,1 @@
-<form method="post" action="/">
-  <%- include("../partials/errors") %>
-  <label for="first_name">First name:</label>
-  <input type="text" name="first_name">
-  <label for="last_name">Last name:</label>
-  <input type="text" name="last_name">
-
-  <input type="submit" value="Create">
-</form>
+<%- include("form", { action: "/", method: "POST", submit: "Create user" }) %>

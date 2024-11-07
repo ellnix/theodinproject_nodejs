@@ -3,14 +3,6 @@
     <title>Edit user</title>
   </head>
   <body>
-    <%- include("../partials/errors.ejs") %>
-    <form action="/<%= user.id %>" method="POST">
-      <label for="first_name">First name:</label>
-      <input type="text" name="first_name" value="<%= user.first_name %>">
-      <label for="last_name">Last name:</label>
-      <input type="text" name="last_name" value="<%= user.last_name %>">
-
-      <input type="submit" value="Update user">
-    </form>
+    <%- include("form", { user, action: `/${user.id}`, method: "POST", submit: "Update user"}) %>
   </body>
 </html>
